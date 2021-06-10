@@ -5,11 +5,11 @@ The data is of  gamma and hadron ray data. When running the tests you see that l
 
 
                                                                                                                                                                                   
-	# Logistic regression:  
+	Logistic regression:  
 	![image](https://user-images.githubusercontent.com/70611669/121574732-92fa1c00-c9f4-11eb-8178-9c4502ed3048.png)
 
 
-	# Naïve Bayes: 
+	Naïve Bayes: 
 	![image](https://user-images.githubusercontent.com/70611669/121574805-a3aa9200-c9f4-11eb-80e2-3c043af92de5.png)
 	 
 

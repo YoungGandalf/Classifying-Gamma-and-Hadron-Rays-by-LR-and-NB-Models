@@ -8,16 +8,16 @@ library(ggpubr)
 library(Seurat)
 library(caret)
 setwd("C:/Users/Adam/Desktop/Spring 2021/Data Science CMSC 462/A3")
-telescope1 = read.csv("telescope_data.csv")
-telescope1$class <- factor(telescope1$class)
-smp_size <- floor(0.75 * nrow(telescope1))
+telescope = read.csv("telescope_data.csv")
+telescope$class <- factor(telescope$class)
+smp_size <- floor(0.75 * nrow(telescope))
 ## set the seed to make your partition reproducible
 set.seed(123)
-train_ind <- sample(seq_len(nrow(telescope1)), size = smp_size)
+train_ind <- sample(seq_len(nrow(telescope)), size = smp_size)
 train <- telescope[train_ind, ]
 test <- telescope[-train_ind, ]
 
-glm.fit <- glm(class ~ .,data=train,family=binomial)
+glm.fit <- glm(class ~ fLength+fM3Long+fAlpha,data=train,family=binomial)
 
 summary(glm.fit) # display results
 
@@ -33,5 +33,3 @@ mean(predicted.classes == test$class)
 t = table(predicted = predicted.classes, actual = test$class)
 train_con_mat = confusionMatrix(t, positive = "h")
 c(train_con_mat$overall["Accuracy"])
-
-

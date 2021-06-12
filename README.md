@@ -6,12 +6,12 @@ The data is of  gamma and hadron ray data. When running the tests you see that l
 
                                                                                                                                                                                   
 	Logistic regression:  
-![image](https://user-images.githubusercontent.com/70611669/121575015-dfddf280-c9f4-11eb-8b78-c2d697f7ce05.png)
-
+![Screenshot 2021-06-12 182223](https://user-images.githubusercontent.com/70611669/121790247-718f6080-cbab-11eb-83ef-18adaea2e605.png)
 
 
 	Naïve Bayes: 
-![image](https://user-images.githubusercontent.com/70611669/121575037-e8362d80-c9f4-11eb-8b61-87d4656a5eec.png)
+![Screenshot 2021-06-12 182357](https://user-images.githubusercontent.com/70611669/121790250-781dd800-cbab-11eb-87e1-b9e2d692e4e9.png)
+
 	 
 
 For LR, I first split my data 75 train, 25 test. I then used the glm() with class being the dependent variable. To find the prob of a ray being ‘g’ or ‘h’ ,  I used the predict function on my test data. Then for the two groups are based on the predicted probability of being ‘g’ or ‘h’.  Values above 0.5 are considered to be a hadron. While below 0.5 is considered a gamma. This models accuracy is measured by the mean of observations that have been correctly classified. If there is an incorrect classified hadron then we say its misclassified which will mean it’s a gamma.  This is done by taking the mean(predicted$classes == test$class). Which gives a  77% correct classification and a 23% misclassification. 
